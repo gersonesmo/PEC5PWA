@@ -1,9 +1,11 @@
 /* import * as moment from 'moment'; */
+import { environment } from 'src/environments/environment';
+
 export class AppSettings {
   public static readonly APP_NAME = 'PoliJob';
   public static readonly APP_LOCALSTORAGE_TOKEN = 'PoliJob_Token';
   public static readonly APP_VERSION = '0.1.0';
-  public static readonly API_ENDPOINT = 'api/';
+  public static readonly API_ENDPOINT = environment.APIENDPOINT_BACKEND;
   public static readonly STATIC_ENDPOINT = AppSettings.API_ENDPOINT + 'static/';
   public static readonly STATIC_AVATAR_ENDPOINT =
     AppSettings.STATIC_ENDPOINT + 'images/avatar/';

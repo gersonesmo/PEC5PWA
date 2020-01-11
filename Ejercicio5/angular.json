@@ -65,6 +65,14 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.qa.ts"
+                }
+              ]
             }
           }
         },
@@ -76,6 +84,9 @@
           "configurations": {
             "production": {
               "browserTarget": "UOCJob:build:production"
+            },
+            "qa": {
+              "browserTarget": "<appname>:build:qa"
             }
           }
         },
