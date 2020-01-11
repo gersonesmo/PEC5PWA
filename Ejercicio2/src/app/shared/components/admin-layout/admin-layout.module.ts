@@ -7,6 +7,6 @@ import { DashboardComponent } from 'src/app/views/dashboard/dashboard.component'
 
 @NgModule({
   imports: [CommonModule, SharedModule, ...materialModules],
-  declarations: [AdminLayoutComponent, DashboardComponent]
+  // declarations: [AdminLayoutComponent, DashboardComponent]
 })
 export class AdminLayoutModule {}

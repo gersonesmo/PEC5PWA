@@ -28,6 +28,9 @@ export class ProfileStudyComponent implements OnChanges {
   rForm: FormGroup;
   options = MockData.TYPE_STUDIES;
 
+  exit: any;
+  submit: any;
+
   constructor() {}
   ngOnChanges(changes: SimpleChanges) {
     let study = {} as Study;

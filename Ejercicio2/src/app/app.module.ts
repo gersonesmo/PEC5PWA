@@ -9,6 +9,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FakeBackendService } from './shared/inmemory-db/fake-backend.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+// import { FontSizeDirective } from './shared/directives/fontsize.directive';
 
 import { MatInputModule, 
         MatButtonModule, 
@@ -23,6 +24,8 @@ import { MatInputModule,
         MatTableModule,
       }
   from '@angular/material';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export const materialModules = [
   MatFormFieldModule,
@@ -49,7 +52,8 @@ export const materialModules = [
     }),
     BrowserAnimationsModule,
     ...materialModules,
-    FlexLayoutModule.withConfig({addFlexToParent: false})
+    FlexLayoutModule.withConfig({addFlexToParent: false}),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [AppComponent],
   providers: [],

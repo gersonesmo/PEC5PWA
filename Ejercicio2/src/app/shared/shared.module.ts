@@ -11,6 +11,7 @@ import { AppComfirmComponent } from './services/app-confirm/app-confirm.componen
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
 
 // DIRECTIVES
+// import { FontSizeDirective } from './directives/fontsize.directive';
 
 // PIPES
 
