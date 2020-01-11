@@ -10,6 +10,7 @@ import { FakeBackendService } from './shared/inmemory-db/fake-backend.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 // import { FontSizeDirective } from './shared/directives/fontsize.directive';
+import { BrowserModule } from '@angular/platform-browser'
 
 import { MatInputModule, 
         MatButtonModule, 
@@ -53,7 +54,8 @@ export const materialModules = [
     BrowserAnimationsModule,
     ...materialModules,
     FlexLayoutModule.withConfig({addFlexToParent: false}),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserModule.withServerTransition({ appId: 'serverApp' })
   ],
   declarations: [AppComponent],
   providers: [],

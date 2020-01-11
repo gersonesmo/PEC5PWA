@@ -19,7 +19,7 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 import { AppConfirmService } from './services/app-confirm/app-confirm.service';
 
 const declarations = [AppComfirmComponent, AdminLayoutComponent];
-const exports = [
+const moduleExports = [
   CommonModule,
   FormsModule,
   ReactiveFormsModule,
@@ -34,6 +34,6 @@ const providers = [AppConfirmService];
   entryComponents: [AppComfirmComponent],
   providers,
   declarations,
-  exports
+  exports: [moduleExports]
 })
 export class SharedModule {}
