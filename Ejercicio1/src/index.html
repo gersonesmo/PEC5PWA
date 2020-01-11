@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FF9800">
+    <meta name="description" content="Hello Worldz PWA!">
+    <title>My hello world page</title>
+    <link rel="stylesheet" type="text/css" href="hello-world.css" media="all">
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <h1 class="vertical-container">Gerson Esquembri Moreno</h1>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-messaging.js"></script>
+
+<script>
+  var config = {
+    apiKey: "AIzaSyC_mhBOw5E4Du80qKBEM-CRHopDZPyKr_0",
+      authDomain: "gersonpwa1.firebaseapp.com",
+      databaseURL: "https://gersonpwa1.firebaseio.com",
+      projectId: "gersonpwa1",
+      storageBucket: "gersonpwa1.appspot.com",
+      messagingSenderId: "466278452003",
+      appId: "1:466278452003:web:3fa5c04023f0ca2cbdda96",
+      measurementId: "G-NKM63FKFLQ"
+  };
+  firebase.initializeApp(config);
+</script>
+
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function() {
+                console.log('Service Worker Registered');
+          });
+      }
+    </script>
+
+    <script>
+      const messaging = firebase.messaging();
+      messaging.requestPermission()
+      .then(function() {
+        console.log('Notification permission granted.');
+        return messaging.getToken();
+      })
+      .then(function(token) {
+        console.log(" token: " + token);
+      })
+      .catch(function(err) {
+        console.log('Unable to get permission to notify.', err);
+      })
+    </script>
+
+  </body>
+</html>
